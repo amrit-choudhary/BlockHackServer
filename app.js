@@ -5,7 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var userRouter = require('./routes/user');
+//var matchRouter = require('./routes/match');
 
 var mongoose = require('mongoose');
 
@@ -22,7 +23,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/user', userRouter);
+//app.use('/match', matchRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -40,8 +42,7 @@ app.use(function (err, req, res, next) {
     res.render('error');
 });
 
-var mongoose = require('mongoose');
-var mongoDB = process.env.MONGODB_URI || 'mongodb://albelaamrit:mlab2008@ds119445.mlab.com:19445/blockhack';
+var mongoDB = 'mongodb://127.0.0.1:27017/blockhack';
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 
 module.exports = app;
