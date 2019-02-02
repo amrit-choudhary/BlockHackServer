@@ -77,7 +77,7 @@ exports.new_question = function (req, res, next) {
                 found_match.name3 = options['Name3'];
 
                 found_match.code4 = options['Code4'];
-                found_match.name4 = options['Name5'];
+                found_match.name4 = options['Name4'];
 
                 found_match.code = options['Code'];
                 found_match.name = options['Name'];
