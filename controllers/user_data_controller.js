@@ -9,13 +9,13 @@ exports.user_login = function (req, res, next) {
                 if (found_user.password == req.body.password) {
                     res.send(JSON.stringify(found_user));
                 } else {
-                    res.send("Wrong pass");
+                    res.send('Wrong pass');
                 }
             } else {
-                res.send("Can't find user");;
+                res.send('Cant find user');
             }
         });
-}
+};
 
 exports.user_register = function (req, res) {
     UserData.findOne({ 'username': req.body.username })
@@ -41,4 +41,4 @@ exports.user_register = function (req, res) {
                 })
             }
         });
-}
+};
